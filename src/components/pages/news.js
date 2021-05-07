@@ -1,4 +1,5 @@
 import React from "react";
+import ganyu from './pics/ganyu.jpg'
 class News extends React.Component {
     constructor(props) {
         super(props)
@@ -30,29 +31,39 @@ class News extends React.Component {
     render() {
         
         
-
-        
         
         return (
             <div className="container-fluid">
                 
                 <h1>News</h1>
+
+                <div class="float-container">
+
                 {this.state.showingNews ?
-                <div className="news">
+                <div className="float-child">
                     <button className="submit" onClick={this.getNews}>Get Latest News</button>
                     <div dangerouslySetInnerHTML={{__html: this.state.news}}></div>
                 </div>
                 :
+                <div className="float-child">
                 <button className="submit" onClick={this.getNews}>Get Latest News</button>
+                <img src={ganyu}  />
+                </div>
                 }       
+
                 {this.state.showingTweet ?
-                <div className="tweet">
+                <div className="float-child">
                     <button className="submit" onClick={this.getTweet}>Get Latest Tweets</button>
                     <div dangerouslySetInnerHTML={{__html: this.state.tweet}}></div>
                 </div>
                 :
+                <div className="float-child">
                 <button className="submit" onClick={this.getTweet}>Get Latest Tweets</button>
+                </div>
                 }       
+
+                </div>
+
             </div>
         );
     }

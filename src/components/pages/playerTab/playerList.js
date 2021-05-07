@@ -13,7 +13,7 @@ class PlayerList extends React.Component {
 
 
     render() {
-        this.state.data = [1,2,3,4,5,6,7,8,9,10]
+        this.state.data = ["content", "content", "content", "content", "content", "content", "content", "content", "content", "content", ]
         let players=[]
         for (let i=0; i<10; i++) {
             players.push(<Player data = {this.state.data[i]}/>)

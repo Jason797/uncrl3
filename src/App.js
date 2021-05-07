@@ -26,7 +26,6 @@ class App extends Component {
       <Router>
       <div className="App">
         <Header />
-
         
         <Route exact path='/' component={Homepage} />
         <Route exact path='/News' component={News} />

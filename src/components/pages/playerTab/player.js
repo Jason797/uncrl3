@@ -8,7 +8,7 @@ class Player extends React.Component {
         return (
             <div className="container-fluid">
                 <div>
-                    Data from parent is: {this.props.data}
+                    free {this.props.data}
                 </div>
 
             </div>
