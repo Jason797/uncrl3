@@ -1,13 +1,15 @@
-function Teams() {
-    return (
-        <div className="container-fluid">
+import React from "react";
+class Teams extends React.Component {
+    render() {
+        return (
+            <div className="container-fluid">
 
-            <h1>Teams</h1>
-            <p>Jajajajajajajaja</p>
+                <h1>Teams</h1>
+                <p>Jajajajajajajaja</p>
 
-        </div>
-    );
-  }
-  
+            </div>
+        );
+    }
+}
   export default Teams;
   

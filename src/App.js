@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -11,29 +13,32 @@ import Footer from './components/footerComponent/footer';
 import Homepage from './components/pages/homePage';
 import News from './components/pages/news';
 import Teams from './components/pages/teams';
-import PlayerList from './components/pages/playerList';
+import PlayerList from './components/pages/playerTab/playerList';
 
 import './Assets/css/app.css'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
 
-function App() {
-  return (
-    <Router>
-    <div className="App">
-      <Header />
+class App extends Component {
+
+  render() {
+    return (
+      <Router>
+      <div className="App">
+        <Header />
 
 
-      <Route exact path='/' component={Homepage} />
-      <Route exact path='/News' component={News} />
-      <Route exact path='/Teams' component={Teams} />
-      <Route exact path='/Player List' component={PlayerList} />
+        <Route exact path='/' component={Homepage} />
+        <Route exact path='/News' component={News} />
+        <Route exact path='/Teams' component={Teams} />
+        <Route exact path='/Player List' component={PlayerList} />
 
 
-      <Footer />
-
-    </div>
-    </Router>
-  );
+        <Footer />
+        <AmplifySignOut />
+      </div>
+      </Router>
+    );
+  }
 }
-
-export default App;
+export default withAuthenticator(App);
