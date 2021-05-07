@@ -1,5 +1,7 @@
 import Player from './player';
 import React from "react";
+
+
 class PlayerList extends React.Component {
     constructor(props) {
         super(props)
@@ -17,6 +19,8 @@ class PlayerList extends React.Component {
             players.push(<Player data = {this.state.data[i]}/>)
         }
 
+
+        
         return (  
             <div className="container-fluid">
 
