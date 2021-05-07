@@ -7,6 +7,22 @@ header {
     height: 90px;
 }
 
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+footer {
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width:90%;
+    height: 48px;
+    text-align: center;
+    background-color: orange;
+    color: white;
+}
 
 
 .logo {

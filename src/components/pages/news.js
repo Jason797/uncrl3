@@ -1,11 +1,42 @@
 import React from "react";
 
 class News extends React.Component {
-    render() {
 
-        const url= 'http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=440&count=3&maxlength=300&format=json'
-        fetch(url)
-        .then(data=>{console.log(data)})
+    async getRequest() {
+        const needle = require('needle');
+        const token = 'AAAAAAAAAAAAAAAAAAAAAIA9PQEAAAAAzSS5imVxMfH5wr%2B%2FiMLA%2BTXsbQo%3D9dPZ2wesLWEDycPuAOaxwwPOyb3syHRrRKyDUuUBNapcN7LOmW';
+        const endpointUrl = "https://api.twitter.com/2/tweets/search/recent";
+        const params = {
+            'query': 'from:twitterdev -is:retweet',
+            'tweet.fields': 'author_id'
+        }
+
+        const res = await needle('get', endpointUrl, params, {
+            headers: {
+                "User-Agent": "v2RecentSearchJS",
+                "authorization": `Bearer ${token}`
+            }
+        })
+
+        if (res.body) {
+            return res.body;
+        } else {
+            throw new Error('Unsuccessful request');
+        }
+    }
+
+
+
+
+    render() {
+        try {
+            const response = this.getRequest();
+            console.log(response);
+        }  catch (e) {
+            console.log(e)
+        }
+
+        
 
         return (
             <div className="container-fluid">

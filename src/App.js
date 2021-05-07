@@ -35,7 +35,9 @@ class App extends Component {
 
 
         <Footer />
+        <div class="footer">
         <AmplifySignOut />
+        </div>
       </div>
       </Router>
     );

@@ -4,7 +4,7 @@ class Footer extends React.Component {
         return (
             <footer>
 
-                Footer
+            
 
             </footer>
         );
