@@ -5,6 +5,7 @@ import PlacesAutocomplete, {
     getLatLng,
 } from 'react-places-autocomplete';
 import kmp from "./pics/kmp.jpg"
+import kmp2 from "./pics/kmp2.jpg"
 
 const mapStyles = {
     width: '40%',
@@ -115,16 +116,16 @@ class Teams extends React.Component {
                     </div> 
 
                     <div className="float-child">
-                        <h2 class="kmp">Waiting for your code to deploy</h2>
+                        <h2 class="kmp">Waiting for your code to deploy like</h2>
                         <div class="container">
                             <div class="box">
                                 <img src={kmp} width='300' height='250'></img>
                             </div>
                             <div class="box">
-                                <img src={kmp} width='300' height='250'></img>
+                                <img src={kmp2} width='300' height='250'></img>
                             </div>
                             <div class="box">
-                                <img src={kmp} width='300' height='250'></img>
+                                <img src={kmp2} width='300' height='250'></img>
                             </div>
                             <div class="box">
                                 <img src={kmp} width='300' height='250'></img>

@@ -30,7 +30,7 @@ class CreatePlayer extends React.Component {
         // make API call with parameters and use promises to get response
         fetch("https://woek5w1kjg.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
         .then(response => response.text())
-        .then(result => alert(JSON.parse(result).body))
+        .then(result => alert("User " + JSON.parse(result).body + " Created"))
         .catch(error => console.log('error', error));
     }
 

@@ -21,8 +21,18 @@ class PlayerList extends React.Component {
         
         let playerlist = []
         for (let i=0; i < this.state.data.body.Items.length; i++) {
-            console.log("working")
-            playerlist.push(<Player name = {this.state.data.body.Items[i].ID} url = {this.state.data.body.Items[i].SteamURL}/>)
+            let players = ''
+            let id = this.state.data.body.Items[i].SteamURL;
+            let url = "https://shielded-caverns-79295.herokuapp.com/http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=EEADF4A02AFD8E02BD752346BFA0A470&steamids=" + id;
+            await fetch(url)
+            .then(r => r.json())
+            .then(r => players = r.response.players[0])
+
+            if (players == null) {
+                continue
+            }
+
+            playerlist.push(<Player steamName = {players.personaname} name = {this.state.data.body.Items[i].ID.slice(1,-1)} avatar={players.avatar} profileurl={players.profileurl}/>)
         }
         
         this.setState({players: playerlist, showingPlayers: true})
