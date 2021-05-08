@@ -50,7 +50,7 @@ class CreatePlayer extends React.Component {
             <textarea class="text" onChange={this.changepText}></textarea>
             <label>Steam ID :</label>
             <textarea class="text" onChange={this.changesText}></textarea>
-            <button type="button" onClick={this.callAPI}>Call API</button>
+            <button type="button" onClick={this.callAPI}>Submit</button>
            </form>
         </div>
 
