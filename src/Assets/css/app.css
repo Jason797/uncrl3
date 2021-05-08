@@ -131,6 +131,10 @@ footer {
     padding: 10px;
 }
 
+.shamelesspromo {
+    font-size: 50px;
+}
+
 .create {
     border-radius: 10px;
     background: orange;

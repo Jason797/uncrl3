@@ -69,8 +69,8 @@ class Homepage extends React.Component {
 
                    
                     <div className="float-child">
-                    
-                        
+                        <a class =  "shamelesspromo" href="https://twitch.tv/vomitonhisspaghetti">Twitch Channel</a>
+        
                     </div>
                     
 
