@@ -14,6 +14,7 @@ import Homepage from './components/pages/homePage';
 import News from './components/pages/news';
 import Teams from './components/pages/teams';
 import PlayerList from './components/pages/playerTab/playerList';
+import CreatePlayer from './components/pages/createPlayer';
 
 import './Assets/css/app.css'
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
@@ -31,6 +32,7 @@ class App extends Component {
         <Route exact path='/News' component={News} />
         <Route exact path='/Teams' component={Teams} />
         <Route exact path='/Player List' component={PlayerList} />
+        <Route exact path='/Create Player' component={CreatePlayer} />
 
 
         <Footer />

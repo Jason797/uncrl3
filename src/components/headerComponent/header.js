@@ -26,7 +26,7 @@ import React from "react";
                         <Link className="a" to="/Player List">Player List</Link>
                     </li>
                     <li className="create">
-                        <Link className="a" to="/">Create Player</Link>
+                        <Link className="a" to="/Create Player">Create Player</Link>
                     </li>
                 </ul>
             </nav>

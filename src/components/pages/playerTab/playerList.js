@@ -1,33 +1,52 @@
 import Player from './player';
 import React from "react";
 
-
 class PlayerList extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: {}
+            data: {},
+            showingPlayers: false,
+            players: []
         }
+        this.fetchData = this.fetchData.bind(this);
+    }
+    
+    async fetchData() {
+        await fetch("https://woek5w1kjg.execute-api.us-east-1.amazonaws.com/dev")
+        .then(response => response.json())
+        .then(r => this.setState({data: r}))
+
+        
+        
+        let playerlist = []
+        for (let i=0; i < this.state.data.body.Items.length; i++) {
+            console.log("working")
+            playerlist.push(<Player name = {this.state.data.body.Items[i].ID} url = {this.state.data.body.Items[i].SteamURL}/>)
+        }
+        
+        this.setState({players: playerlist, showingPlayers: true})
+
     }
 
-
-
     render() {
-        this.state.data = ["content", "content", "content", "content", "content", "content", "content", "content", "content", "content", ]
-        let players=[]
-        for (let i=0; i<10; i++) {
-            players.push(<Player data = {this.state.data[i]}/>)
-        }
-
+        
 
         
         return (  
             <div className="container-fluid">
 
                 <h1>Player List</h1>
+
+                {this.state.showingPlayers ?
                 <div>
-                    {players}
+                    {this.state.players}
                 </div>
+                :
+                <div>
+                    <button className="submit" onClick={this.fetchData}>Get Player List</button>
+                </div>
+                }
 
             </div>
         );
